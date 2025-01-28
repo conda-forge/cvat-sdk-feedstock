@@ -1,5 +1,5 @@
 {% set name = "cvat-sdk" %}
-{% set version = "2.25.0" %}
+{% set version = "2.26.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cvat_sdk-{{ version }}.tar.gz
-  sha256: 65c7faf74fbbd4ca799efa31774d6c378afed55d0a4c6e1141a6621845f35178
+  sha256: c0e6cb61700853327a4efaef3eeb22b5998e727a637cff60eec5a1cbe83189b8
 
 build:
   noarch: python
@@ -53,7 +53,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - python-dateutil >=2.5.3
-        - "{{ pin_subpackage('cvat-sdk', exact=True) }}"
+        - {{ pin_subpackage('cvat-sdk', exact=True) }}
         - numpy >=2
     test:
       imports:
@@ -75,7 +75,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - python-dateutil >=2.5.3
-        - "{{ pin_subpackage('cvat-sdk', exact=True) }}"
+        - {{ pin_subpackage('cvat-sdk', exact=True) }}
         - pytorch
         - torchvision
         - scikit-image >=0.24
