@@ -1,5 +1,5 @@
 {% set name = "cvat-sdk" %}
-{% set version = "2.30.0" %}
+{% set version = "2.31.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/cvat_sdk-{{ version }}.tar.gz
-  sha256: 5678752846dc73e439600b4ca1827b01c990299e6197e20a17f259638877b69b
+  sha256: aaeff833c32bfe711f418c62bdab135e0746eff0e89757e8b61cfad14a42ef23
 
 build:
   noarch: python
