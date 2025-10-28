@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: cvat-sdk
-  version: "2.47.0"
+  version: "2.48.0"
 
 recipe:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/cvat_sdk-${{ version }}.tar.gz
-  sha256: b70383ff933bf7ef3c84fdfa9ec5ded0565179d214c8afdecef01d6888802b55
+  sha256: a888c8f4f666c1cf026c049e76ac550bc1dd2739e4029567d976e3786d6a22f7
 
 build:
   number: 0
@@ -24,7 +24,7 @@ outputs:
     requirements:
       host:
         - python ${{ python_min }}.*
-        - setuptools
+        - setuptools >=21.0.0
         - wheel
         - pip
       run:
@@ -38,6 +38,7 @@ outputs:
         - typing_extensions >=4.2.0
         - python-dateutil >=2.5.3
         - urllib3 >=1.25.3
+        - setuptools >=21.0.0
     tests:
       - python:
           imports:
@@ -55,13 +56,14 @@ outputs:
     requirements:
       host:
         - python ${{ python_min }}.*
-        - setuptools
+        - setuptools >=21.0.0
         - wheel
         - pip
       run:
         - python >=${{ python_min }}
         - python-dateutil >=2.5.3
         - ${{ pin_subpackage('cvat-sdk', exact=True) }}
+        - setuptools >=21.0.0
         - numpy >=2
     tests:
       - python:
@@ -80,15 +82,17 @@ outputs:
     requirements:
       host:
         - python ${{ python_min }}.*
-        - setuptools
+        - setuptools >=21.0.0
         - wheel
         - pip
       run:
         - python >=${{ python_min }}
         - python-dateutil >=2.5.3
         - ${{ pin_subpackage('cvat-sdk', exact=True) }}
+        - ${{ pin_subpackage('cvat-sdk-masks', exact=True) }}
         - pytorch
         - torchvision
+        - setuptools >=21.0.0
         - scikit-image >=0.24
     tests:
       - python:
