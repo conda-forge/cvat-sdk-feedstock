@@ -24,7 +24,7 @@ outputs:
     requirements:
       host:
         - python ${{ python_min }}.*
-        - setuptools
+        - setuptools >=21.0.0
         - wheel
         - pip
       run:
@@ -38,6 +38,7 @@ outputs:
         - typing_extensions >=4.2.0
         - python-dateutil >=2.5.3
         - urllib3 >=1.25.3
+        - setuptools >=21.0.0
     tests:
       - python:
           imports:
@@ -55,13 +56,14 @@ outputs:
     requirements:
       host:
         - python ${{ python_min }}.*
-        - setuptools
+        - setuptools >=21.0.0
         - wheel
         - pip
       run:
         - python >=${{ python_min }}
         - python-dateutil >=2.5.3
         - ${{ pin_subpackage('cvat-sdk', exact=True) }}
+        - setuptools >=21.0.0
         - numpy >=2
     tests:
       - python:
@@ -80,15 +82,17 @@ outputs:
     requirements:
       host:
         - python ${{ python_min }}.*
-        - setuptools
+        - setuptools >=21.0.0
         - wheel
         - pip
       run:
         - python >=${{ python_min }}
         - python-dateutil >=2.5.3
         - ${{ pin_subpackage('cvat-sdk', exact=True) }}
+        - ${{ pin_subpackage('cvat-sdk-masks', exact=True) }}
         - pytorch
         - torchvision
+        - setuptools >=21.0.0
         - scikit-image >=0.24
     tests:
       - python:
