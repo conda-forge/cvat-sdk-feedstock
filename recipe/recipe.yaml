@@ -61,9 +61,7 @@ outputs:
         - pip
       run:
         - python >=${{ python_min }}
-        - python-dateutil >=2.5.3
         - ${{ pin_subpackage('cvat-sdk', exact=True) }}
-        - setuptools >=21.0.0
         - numpy >=2
     tests:
       - python:
@@ -87,12 +85,9 @@ outputs:
         - pip
       run:
         - python >=${{ python_min }}
-        - python-dateutil >=2.5.3
-        - ${{ pin_subpackage('cvat-sdk', exact=True) }}
         - ${{ pin_subpackage('cvat-sdk-masks', exact=True) }}
         - pytorch
         - torchvision
-        - setuptools >=21.0.0
         - scikit-image >=0.24
     tests:
       - python:
