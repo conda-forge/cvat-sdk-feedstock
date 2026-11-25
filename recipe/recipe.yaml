@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: cvat-sdk
-  version: "2.83.0"
+  version: "2.84.0"
 
 recipe:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/cvat_sdk-${{ version }}.tar.gz
-  sha256: 24fe688cedb69efb66b0e7e0a5f8c6c3269baba036274113a3b95892b57cf575
+  sha256: a207c23dd62ac191832b8e78adca461cfa1a11983e79cb561e845e478d38d615
 
 build:
   number: 0
